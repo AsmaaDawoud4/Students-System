@@ -1,0 +1,194 @@
+
+<!DOCTYPE html >
+<html>
+	<head>
+
+<script language="JavaScript"><!--
+function twoDigYear(yy) {
+	yy = Number(yy);
+	if (yy < 100){
+		if (yy > 20) {
+			yy = yy + 1900
+		}else{
+			yy = yy + 2000
+		}
+	}
+	return yy;
+}
+function initializeDates() {
+	var tmpToday = new Date();
+	document.forms["calculator"].elements["testMonth"].value = tmpToday.getMonth() + 1;
+	document.forms["calculator"].elements["testDay"].value = tmpToday.getDate();
+	document.forms["calculator"].elements["testYear"].value = tmpToday.getFullYear();
+
+//	document.forms["calculator"].elements["bornMonth"].value = 5;
+//	document.forms["calculator"].elements["bornDay"].value = 12;
+//	document.forms["calculator"].elements["bornYear"].value = 2005;
+//
+//	document.forms["calculator"].elements["testMonth"].value = 2;
+//	document.forms["calculator"].elements["testDay"].value = 21;
+//	document.forms["calculator"].elements["testYear"].value = 2009;
+}
+function daysInMonth(month,year) {
+	var dd = new Date(year, month, 0);
+	return dd.getDate();
+}
+function calcage() {
+	strBirthMonth = Number(document.forms["calculator"].elements["bornMonth"].value);
+	strBirthDay = Number(document.forms["calculator"].elements["bornDay"].value);
+	strBirthYear = twoDigYear(document.forms["calculator"].elements["bornYear"].value);
+	strTestMonth = Number(document.forms["calculator"].elements["testMonth"].value);
+	strTestDay = Number(document.forms["calculator"].elements["testDay"].value);
+	strTestYear = twoDigYear(document.forms["calculator"].elements["testYear"].value);
+
+	var strBirthDate = strBirthMonth + "/" + strBirthDay + "/" + strBirthYear;
+	var strTestDate = strTestMonth + "/" + strTestDay + "/" + strTestYear;
+
+	if (isDate(strBirthDate, "Birthday Date:") && isDate(strTestDate, "Test Date:")) {
+
+		var tmpBornDate = new Date(strBirthYear, strBirthMonth - 1, strBirthDay);
+		var tmpTestDate = new Date(strTestYear, strTestMonth - 1, Number(strTestDay));
+		var intDifYears = (strTestMonth < strBirthMonth) ? strTestYear - strBirthYear - 1 : strTestYear - strBirthYear;
+		var intDifMonths = (strTestMonth < strBirthMonth) ? (12 - strBirthMonth) + strTestMonth : strTestMonth - strBirthMonth;
+
+		// convention is to use 30 day months rather than real number of days
+		// if that should change, adjust comments below
+		
+		// comment out below for 30 day months
+		// var intDifDays = (strTestDay < strBirthDay) ? daysInMonth(strBirthMonth,strBirthYear) - strBirthDay + strTestDay : strTestDay - strBirthDay;
+		// This should use true days in month
+		var intDifDays = (strTestDay < strBirthDay) ? 30 - strBirthDay + strTestDay : strTestDay - strBirthDay;
+
+		//borrow months and years
+		var intDifMonths = (strTestDay < strBirthDay) ? intDifMonths-1 : intDifMonths;
+		if (intDifMonths < 0) {
+			intDifMonths = 11;
+			intDifYears = intDifYears - 1;
+		}
+
+		if (intDifYears < 0) {
+			alert("The Birthday Date must be prior to the Test Date.");
+			return false;
+		}
+
+		var strYears = "";
+		var strDays = intDifDays;
+		var strMonths = intDifMonths;
+		var strYears = intDifYears;
+		if (document.forms["calculator"].elements["name"].value != "") {
+			document.forms["calculator"].elements["Age"].value = document.forms["calculator"].elements["name"].value + " is " + strYears + " year(s), " + strMonths + " month(s), and " + strDays + " day(s).";
+		} else {
+			document.forms["calculator"].elements["Age"].value = strYears + " year(s), " + strMonths + " month(s), and " + strDays + " day(s).";
+
+		}
+	}
+}
+
+function isDate(dateStr, outStr) {
+
+	var datePat = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+	var matchArray = dateStr.match(datePat); // is the format ok?
+
+	if (matchArray == null) {
+		alert(outStr + " Please enter date as either mm/dd/yyyy or mm-dd-yyyy.");
+		return false;
+	}
+
+	month = matchArray[1]; // p@rse date into variables
+	day = matchArray[3];
+	year = matchArray[5];
+
+	if (month < 1 || month > 12) { // check month range
+		alert(outStr + " Month must be between 1 and 12.");
+		return false;
+	}
+
+	if (day < 1 || day > 31) {
+		alert(outStr + " Day must be between 1 and 31.");
+		return false;
+	}
+
+	if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+		alert(outStr + " Month "+month+" doesn`t have 31 days!")
+		return false;
+	}
+
+	if (month == 2) { // check for february 29th
+		var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+		if (day > 29 || (day==29 && !isleap)) {
+			alert(outStr + " February " + year + " doesn`t have " + day + " days!");
+			return false;
+		}
+	}
+
+	return true; // date is valid
+}</script>
+</head>
+
+<body leftmargin="0" topmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0" onLoad="initializeDates()">
+<form name="calculator" action="">
+  <!-- Table Here -->
+  <table width="100%" bgcolor="#ffffff" border="0" bordercolor="#000000" cellpadding="2" cellspacing="0">
+    <tbody>
+      <tr bgcolor="#339966">
+
+        <td colspan="2" valign="top" align="center"><font size="3" face="HELVETICA, ARIAL, SANS-SERIF"> <b><font color="#ffffff">Chronological Age Calculator</font></b> </font></td>
+      </tr>
+      <tr>
+        <td colspan="2" valign="top" align="center"><br>
+          <table width="283" bgcolor="#cccccc" border="1" bordercolor="#000000" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+
+                <td valign="top"><table bgcolor="#cccccc" border="0" cellpadding="1" cellspacing="2">
+                    <tbody>
+                      <tr>
+                        <td valign="top"><font size="2" face="HELVETICA, ARIAL, SANS-SERIF"> Name: </font></td>
+                        <td><input name="name" size="40" type="text"></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><table>
+
+                            <tbody>
+                              <tr>
+                                <td valign="top"><font size="2" face="HELVETICA, ARIAL, SANS-SERIF"> Birthday Date: </font></td>
+                                <td><input name="bornMonth" size="2" type="text"></td>
+                                <td>/</td>
+                                <td><input name="bornDay" size="2" type="text"></td>
+                                <td>/</td>
+
+                                <td><input name="bornYear" size="4" type="text"></td>
+                              </tr>
+                              <tr>
+                                <td valign="top"><font size="2" face="HELVETICA, ARIAL, SANS-SERIF"> Test Date: </font></td>
+                                <td><input name="testMonth" size="2" type="text"></td>
+                                <td>/</td>
+                                <td><input name="testDay" size="2" type="text"></td>
+
+                                <td>/</td>
+                                <td><input name="testYear" size="4" type="text"></td>
+                              </tr>
+                              <tr> </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                      <tr align="center">
+
+                        <td colspan="2" valign="top"><input name="Calculate" size="2" value="Calculate Age" onClick="calcage()" type="button"></td>
+                      </tr>
+                      <tr>
+                        <td valign="top"><font size="2" face="HELVETICA, ARIAL, SANS-SERIF"> Age: </font></td>
+                        <td valign="top"><textarea name="Age" cols="30" rows="3" wrap="Physical"></textarea></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+            </tbody>
+          </table></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<!-- Table Here -->
+</body>
+</html>

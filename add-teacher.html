@@ -1,0 +1,322 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+    <!-- Google font (cairo font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- font-awesome v5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- bootstrap v5 -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animate v3-->
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <!-- datepicker -->
+    <link rel="stylesheet" href="assets/css/datepicker.css" />
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <!-- dataTables -->
+    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css" />
+    <!-- custom style-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!--start main-header-->
+    <header class="main-header">
+        <div class="container d-flex">
+            <ul class=" navbar-menu d-flex">
+                <!--start toggle-menu (show in mobile)-->
+                <a class="toggle-menu" href="#">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </a>
+                <!--end toggle-menu (show in mobile)-->
+                <!--mega-drop-down-->
+                <li class="mega-drop-down"><a href="#"> شئون الطلبة <i class="fas fa-angle-down"></i></a>
+                    <div class="animated mega-menu  fadeIn">
+                        <ul class="d-flex row-cols-4">
+                            <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+                            <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+                            <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+                            <li><a href="student's-birthday.html"><i class="fas fa-birthday-cake"></i> عيد ميلاد الطالب اليوم</a></li>
+                            <li><a href="editing-data.html"><i class="far fa-edit"></i> تعديل بيانات طالب</a></li>
+                            <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> الكنترول المدرسي</a></li>
+                            <li><a href="student's-id.html"><i class="far fa-id-badge"></i> ID MANAGMENT</a></li>
+                            <li><a href="class-data.html"><i class="fas fa-user-friends"></i> تسكين الفصول</a></li>
+                            <li><a href="schedule.html"><i class="fas fa-clipboard-list"></i> الجداول الدراسية</a></li>
+                            <li><a href="budget.html"><i class="fas fa-money-check-alt"></i> الميزانية </a></li>
+                            <li><a href="therecord.html "><i class="fas fa-clipboard-list"></i> السجل</a></li>
+                            <li><a href="print-certificates.html"><i class="fas fa-certificate"></i> طباعة الشهادات</a></li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li class="mega-drop-down">
+                    <a href="#"><i class="far fa-file-alt"></i> الاستقبال <i class="fas fa-angle-down"></i></a>
+                    <div class="animated mega-menu  fadeIn">
+                        <ul class="d-flex row-cols-4">
+                            <li><a href="contact-daily.html"><i class="fas fa-user-graduate"></i> الاتصال بالغياب اليومي</a></li>
+                            <li><a href="about-datastudent.html"><i class="fas fa-user-graduate"></i> استعلام عن بيانات طالب</a></li>
+                            <li><a href="add-studenthold.html"><i class="far fa-pause-circle"></i> تسجيل طالب تحت الانتظار </a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li  class="mega-drop-down">
+                    <a href="#"><i class="far fa-file-alt"></i>الماليات <i class="fas fa-angle-down"></i>
+                    </a>
+                    <div class="animated mega-menu  fadeIn">
+                        <ul class="d-flex row-cols-4">
+                            <li><a href="pay-fees.html"><i class="fas fa-money-check"></i> دفع مصروفات طالب</a></li>
+                            <li><a href="print-payroll.html"><i class="fas fa-print"></i> طباعه كشف المرتبات</a></li>
+                            <li><a href="#"> قريبا</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li  class="mega-drop-down">
+                    <a href="#"><i class="far fa-file-alt"></i> شئون العامين <i class="fas fa-angle-down"></i>
+                    </a>
+                    <div class="animated mega-menu  fadeIn">
+                        <ul class="d-flex row-cols-4">
+                            <li><a href="add-teacher.html"><i class="fas fa-chalkboard-teacher"></i> إضافة مدرس</a></li>
+                            <li><a href="teacher-delays.html"><i class="fas fa-school"></i> التأخير والغياب والسلوك</a></li>
+                            <li><a href="add-teacherhold.html"><i class="far fa-pause-circle"></i> تسجيل مدرس تحت الانتظار</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <!--user-menu-drop-down-->
+            <div class="user-menu-wrap">
+                <a id="user-photo" href="#">
+                    <img src="assets/imgs/admin.png" width="55" height="55" />
+                </a>
+                <div class="menu-container">
+                    <ul class="user-menu">
+                        <div class="profile-highlight">
+                            <img src="assets/imgs/admin.png" alt="profile-img">
+                            <div class="details">
+                                <div id="profile-name">محمد منصور</div>
+                                <div id="profile-footer">مدرس أول</div>
+                            </div>
+                        </div>
+                        <li class="user-menu__item">
+                            <a class="user-menu-link" href="#">
+                                <i class="far fa-user-circle"></i>
+                                <div>الملف الشخصى</div>
+                            </a>
+                        </li>
+                        <li class="user-menu__item">
+                            <a class="user-menu-link" href="#">
+                                <i class="fas fa-users-cog"></i>
+                                <div>الأعدادات</div>
+                            </a>
+                        </li>
+                        <div class="footer">
+                            <li class="user-menu__item"><a class="user-menu-link" href="#" style="color: #F44336;">تسجيل
+                                    الخروج</a></li>
+                            <li class="user-menu__item"><a class="user-menu-link" href="#">الأعدادات</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--end main-header-->
+
+    <!--start content-->
+    <section class="main-content  pb-70">
+        <div class="container">
+
+            <form class="addstudent-form " action="assets/php/students/add-teacher.php" method="POST"  enctype="multipart/form-data">
+                <div class="form-block">
+                    <!--block-title-->
+                    <div class="block-title d-flex">
+                        <img class="icon-title" src="assets/imgs/graduated.png">
+                    </div>
+                    <div class="row ">
+                        <!--inputs-group -->
+                        <div class="inputs-group row-cols-3">
+                            <span class="balloon-input">
+                                <input class="balloon" id="teacherName" name="teacher_name" type="text" maxlength="50" />
+                                <label for="teacherName">أسم المدرس</label>
+                            </span>
+
+                            <span class="datepicker-group">
+                                <div class="input-group">
+                                    <div class="inputgroup-icon">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                    <input id="studentdate" name="teacher_DOB" type="text" data-toggle="datepicker"
+                                        placeholder="تاريخ الميلاد" autocomplete="off">
+                                </div>
+                            </span>
+                            <span class="balloon-input">
+                                <input class="balloon" id="studentNa" name="" type="text" />
+                                <label for="studentNa">الجنسية </label>
+                            </span>
+                            <span>
+                                <select name="teacher_Social">
+                                    <option style="display: none;"> الحالة الاجتماعية</option>
+                                    <option>اعزب  </option>
+                                    <option>متزوج </option>
+                                    <option>متزوج ويعول</option>
+                                    <option>مطلق </option>
+                                    <option>مطلق وبعول</option>
+                                    <option>أرمل </option>
+                                    <option>رومل ويعول</option>
+                                </select>
+                            </span>
+                            <span >
+                                <div class="d-flex">
+                            <span class="custom-checkbox bounce">
+                                <input type="checkbox">
+                                <svg viewBox="0 0 21 21">
+                                    <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                                </svg>
+                                <span>قريبا</span>
+                            </span>
+                            <span class="balloon-input me-2 flex-grow-1 ">
+                                <input class="balloon" id="phoneNumber" name="teacher_phone1" type="text" />
+                                <label for="phoneNumber">رقم الهاتف</label>
+                            </span>
+                        </div>
+                        </span>
+                        <span >
+                            <div class="d-flex">
+                            <span class="custom-checkbox bounce">
+                                <input type="checkbox">
+                                <svg viewBox="0 0 21 21">
+                                    <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                                </svg>
+                                <span>قريبا</span>
+                            </span>
+                            <span class="balloon-input me-2 flex-grow-1 ">
+                                <input class="balloon" id="phoneNumber2"name="teacher_phone2" type="text" />
+                                <label for="phoneNumber2">رقم الهاتف</label>
+                            </span>
+                        </div>
+                        </span>
+                            <!--radio-group-->
+                        
+                            <span class="balloon-input full-width">
+                                <input class="balloon" id="full-widths" type="text" maxlength="80" name="teacher_adress"/>
+                                <label for="full-widths">اﻟﻌﻨﻮاﻥ ﺑﺎﻟﺘﻔﺼﻴﻞ </label>
+                            </span>
+
+                            <span>
+                                <select name="teacher_job">
+                                    <option style=" display: none;">الوظيفة </option>
+                                    <option>الوظيفة 1</option>
+                                    <option>الوظيفة 2</option>
+                                    <option>الوظيفة 3</option>
+                                    <option>الوظيفة 4</option>
+                                    <option>الوظيفة 5</option>
+                                </select>
+                            </span>
+                            <span>
+                                <select name="teacher_classes">
+                                    <option style=" display: none;">الفصول</option>
+                                    <option> الفصول 1</option>
+                                    <option> الفصول 2</option>
+                                    <option> الفصول 3</option>
+                                    <option> الفصول 4</option>
+                                    <option> الفصول 5</option>
+                                    <option> الفصول 6</option>
+                                    <option> الفصول 7</option>
+                                    <option> الفصول 8</option>
+                                    <option> الفصول 9</option>
+                                    <option> الفصول 10</option>
+                                    <option> الفصول 11</option>
+                                    <option> الفصول 12</option>
+                                    <option> الفصول 13</option>
+                                    <option> الفصول 14</option>
+                                    <option> الفصول 15</option>                                
+                                </select>
+                            </span>
+                            <span class="datepicker-group">
+                                <div class="input-group">
+                                    <div class="inputgroup-icon">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                    <input id="studentdate" type="text" data-toggle="datepicker"
+                                        placeholder=" تاريخ استلام العمل "name="teacher_StartDate" autocomplete="off">
+                                </div>
+                            </span>
+                            <span class="balloon-input full-width">
+                                <textarea class="balloon" name="teacher_Experince" id="previousExperience" style="min-height: 150px;"></textarea>
+                                <label for="previousExperience">الخبرات السابقة</label>
+                            </span>
+                        </div>
+                        <!--upload-img-->
+                        <div class="upload-img">
+                            <div class="upload-content">
+                                <div class="overlay d-flex">
+                                    <div class="group-bnt">
+                                        <a href="#" class="btn">طباعة تقرير pdf</a>
+                                        <a href="#" class="btn">طباعة بيانات المدرس</a>
+                                        <a href="#" class="btn">لاحقا</a>
+                                    </div>
+                                </div>
+                                <canvas id="stdimg" ></canvas>
+                            </div>
+                            <input type="file" name="teacher_pic" id="finput" class="inputfile" onchange="upload()" />
+                            <label class="inputlabel" for="finput"> <i class="fas fa-upload"></i> رفع صورة
+                                المدرس</label>
+                        </div>
+
+                    </div>
+                </div>
+     
+                <!--save button-->
+                <div class="text-center">
+                    <button class="btn save">حفظ البيانات</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--footer-->
+    <footer class="footer ">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="d-flex links">
+                        <a href="#" class="me-2">الرئيسية</a>
+                        <a href="#" class="me-2">عنا</a>
+                        <a href="#" class="me-2">اتصل بنا</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="logo-footer">
+                        <img src="assets/imgs/student-album1.jpg">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="d-flex social-links justify-content-end">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Copyright py-2">Copyright © 2021 All rights reserved.</div>
+    </footer>
+    <!--end content-->
+
+
+    <!-- jquery v3 -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- SimpleImage v3 -->
+    <script src="assets/js/SimpleImage.js"></script>
+    <!-- datepicker  -->
+    <script src="assets/js/datepicker.js"></script>
+    <!-- swiper slider  -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+     <!-- dataTables  -->
+     <script src="assets/js/jquery.dataTables.min.js"></script>
+    <!-- custom js (plugin) -->
+    <script src="assets/js/plugin.js"></script>
+</body>
+
+</html>
