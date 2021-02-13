@@ -2,7 +2,7 @@
 
 **PHP Students System Project**
 
-**Used Technologoies**
+**Used Technologoies 🤙✨**
 <ul>
 <li>PHP</li>
 <li>HTMl</li>
