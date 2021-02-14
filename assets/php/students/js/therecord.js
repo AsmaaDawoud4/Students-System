@@ -1,39 +1,36 @@
-
 $(document).ready(function () {
-    ////*** ajax request onload page edit_student */   
+    var dTable = $('.dataTables-material').DataTable();
+
     $.ajax({
-        url: "assets/php/students/therecord.php",
         type: 'post',
+        url: "assets/php/students/therecord.php",
         dataType: 'json',
-        // contentType: false,
         processData: false,
+        contentType: false,
         success: function (data) {
-            $('tbody').html(data.std_absent_data);
+            $.each(data, (key, value) => {
+                dTable.row.add(value).draw();
+            });
         },
         error: function (data) {
             console.log(data);
         }
     });
- 
-      
-    $('.data_column').change(function() {
-       
+
+    $('.data_column').change(function () {
+
         var values = [];
-        var span_name=[];
-        {
-          $('.data_column :checked').each(function() {
+        var span_name = [];
+        $('.data_column :checked').each(function () {
             //if(values.indexOf($(this).val()) === -1){
             values.push($(this).attr('name'));
             span_name.push($(this).attr('value'));
             // }
-          });
-          
-          elements = values.join(',')
-          span_name=span_name.join(',')
-          console.log (span_name+values)
-          $.post('assets/php/students/therecorddd.php', {elements: elements,span_name:span_name},)
+        });
 
-         }
-      });
-    
+        elements = values.join(',')
+        span_name = span_name.join(',')
+        console.log(span_name + values)
+        $.post('assets/php/students/therecorddd.php', { elements: elements, span_name: span_name },)
+    });
 });
