@@ -1,8 +1,14 @@
 $(document).ready(function () {
     var dTable = $('.dataTables-material').DataTable();
+<<<<<<< HEAD
 /** ajax request to get data from database */
     $.ajax({
         type: 'get',
+=======
+
+    $.ajax({
+        type: 'post',
+>>>>>>> d8962451298b01b52948e707f2f0e4ab3acef225
         url: "assets/php/students/therecord.php",
         dataType: 'json',
         processData: false,
@@ -16,11 +22,16 @@ $(document).ready(function () {
             console.log(data);
         }
     });
+<<<<<<< HEAD
 /**choose data from checkbox-dropdown */
+=======
+
+>>>>>>> d8962451298b01b52948e707f2f0e4ab3acef225
     $('.data_column').change(function () {
 
         var values = [];
         var span_name = [];
+<<<<<<< HEAD
         {
             $('.data_column :checked').each(function () {
                 
@@ -48,4 +59,18 @@ $(document).ready(function () {
         }
     });
 
+=======
+        $('.data_column :checked').each(function () {
+            //if(values.indexOf($(this).val()) === -1){
+            values.push($(this).attr('name'));
+            span_name.push($(this).attr('value'));
+            // }
+        });
+
+        elements = values.join(',')
+        span_name = span_name.join(',')
+        console.log(span_name + values)
+        $.post('assets/php/students/therecorddd.php', { elements: elements, span_name: span_name },)
+    });
+>>>>>>> d8962451298b01b52948e707f2f0e4ab3acef225
 });
