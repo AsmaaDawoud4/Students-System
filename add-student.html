@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css" />
     <!-- custom style-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/toastr.css">
+    <!-- <link rel="stylesheet" href="assets/css/toastr.css"> -->
 </head>
 
 <body>
@@ -139,6 +139,7 @@
                 </div>
                 <div class="row ">
                     <!--inputs-group -->
+                   
                     <div class="inputs-group row-cols-3">
                         <span class="balloon-input">
                             <input class="balloon" id="studentName" type="text" maxlength="50" name="std_name"
@@ -167,7 +168,7 @@
                         <!--radio-group-->
                         <span class="radio-group">
                             <label for="male" class="btn-radio">
-                                <input type="radio" id="male" name="std_sex" value="male">
+                                <input type="radio" id="male" name="std_sex" value="ذكر">
                                 <svg width="20px" height="20px" viewBox="0 0 20 20">
                                     <circle cx="10" cy="10" r="9"></circle>
                                     <path
@@ -181,7 +182,7 @@
                             </label>
 
                             <label for="fmale" class="btn-radio">
-                                <input type="radio" id="fmale" name="std_sex" value="fmale">
+                                <input type="radio" id="fmale" name="std_sex" value="انثى">
                                 <svg width="20px" height="20px" viewBox="0 0 20 20">
                                     <circle cx="10" cy="10" r="9"></circle>
                                     <path
@@ -322,7 +323,7 @@
                         <div class="upload-content">
                             <div class="overlay d-flex">
                                 <div class="group-bnt">
-                                    <a href="#" class="btn">طباعة تقرير pdf</a>
+                                    <a href="#" class="btn addstudentpdf">طباعة تقرير pdf</a>
                                     <a href="#" class="btn">طباعة بيانات الطالب</a>
                                     <a href="#" class="btn">لاحقا</a>
                                 </div>
@@ -453,8 +454,8 @@
     <script src="assets/js/plugin.js"></script>
     <script src="assets/php/students/js/add_student.js"></script>
       <!-- toastr -->
-  <script src="assets/js/toastr.js"></script>
-  <script>toastr.info("add sucisseully");</script>
+  <!-- <script src="assets/js/toastr.js"></script>
+  <script>toastr.info("add sucisseully");</script> -->
 </body>
 
 </html>

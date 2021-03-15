@@ -1,48 +1,38 @@
-<input type="button" value="Generate Table" onclick="GenerateTable()" />
-<hr />
-<div id="dvTable"></div>
-<script type="text/javascript">
-    function GenerateTable() {
-        //Build an array containing Customer records.
-        var customers = new Array();
-        customers.push(["Customer Id", "Name", "Photo"]);
-        customers.push([1, "John Hammond", "Images/1.jpg"]);
-        customers.push([2, "Mudassar Khan", "Images/2.jpg"]);
-        customers.push([3, "Suzanne Mathews", "Images/3.jpg"]);
-        customers.push([4, "Robert Schidner", "Images/4.jpg"]);
- 
-        //Create a HTML Table element.
-        var table = document.createElement("TABLE");
-        table.border = "1";
- 
-        //Get the count of columns.
-        var columnCount = customers[0].length;
- 
-        //Add the header row.
-        var row = table.insertRow(-1);
-        for (var i = 0; i < columnCount; i++) {
-            var headerCell = document.createElement("TH");
-            headerCell.innerHTML = customers[0][i];
-            row.appendChild(headerCell);
-        }
- 
-        //Add the data rows.
-        for (var i = 1; i < customers.length; i++) {
-            row = table.insertRow(-1);
-            for (var j = 0; j < columnCount; j++) {
-                var cell = row.insertCell(-1);
-                if (j < 2) {
-                    cell.innerHTML = customers[i][j];
-                } else {
-                    var img = document.createElement("IMG");
-                    img.src = customers[i][j];
-                    cell.appendChild(img);
-                }
-            }
-        }
- 
-        var dvTable = document.getElementById("dvTable");
-        dvTable.innerHTML = "";
-        dvTable.appendChild(table);
-    }
+Expand ▼   Copy Code<?php
+	$imgFolder = 'img/';
+	$imgNames = array( '2stars.png', 'close.png', 'navbar2.png' );
+	$numImages = count($imgNames);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myOnInit()
+{
+	var numImages = <?php echo $numImages; ?>;
+	var i, imgNames = [];
+	<?php 
+		echo "imgNames[] = [";
+		echo "imgNames = [";
+		for ($i=0; $i<$numImages; $i++)
+		{
+			if ($i != 0) echo ", ";
+			echo "'$imgFolder$imgNames[$i]'";
+		}
+		echo "];\n"
+	?>
+	
+	for (i=0; i<numImages; i++)
+	{
+		img = document.createElement('img');
+		img.src = imgNames[i];
+		img.setAttribute('width', '440');
+		img.setAttribute('height', '500');
+		document.body.appendChild(img);
+	}
+}
 </script>
+</head>
+<body onload='myOnInit();'>
+</body>
+</html>

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            
            $_SESSION['query']=$query;
     $data = GetDataall($query);
-
+/**collect data to pass pdf file */
     $resultHTML = '';
 
     $keys = array_keys($data);
@@ -25,8 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resultHTML .= '</tr>';
     }
     $_SESSION['resultHTML']=$resultHTML;
-    echo json_encode([
-        'success' => true,
-        'std_absent_data' => $resultHTML
-    ]);
+    /**end collect */
+    echo json_encode($data);
 }

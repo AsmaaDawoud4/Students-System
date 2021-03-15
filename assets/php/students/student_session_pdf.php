@@ -1,0 +1,27 @@
+<?php
+session_start();
+include '../functions/connect.php';
+$_SESSION['std_name'] = $_POST['std_name'];
+$_SESSION['std_id']  = $_POST['std_id'];
+$_SESSION['std_rlgn'] =$_POST['std_rlgn'];
+$_SESSION['std_DOB'] = $_POST['std_DOB'];
+$_SESSION['std_Adress'] = $_POST['std_Adress'];
+$_SESSION['Relationship']=$_POST['Relationship'];
+$_SESSION['std_sex'] = $_POST['std_sex'];
+$_SESSION['std_lvl'] =$_POST['std_lvl'];
+$_SESSION['std_stge']= $_POST['std_stge'];
+$_SESSION['std_class']=$_POST['std_class'];
+$_SESSION['std_custody'] = $_POST['std_custody'];
+$_SESSION['R_Name']=$_POST['R_Name'];
+$_SESSION['fath_name']=$_POST['fath_name'];
+$_SESSION['fath_id']=$_POST['fath_id'];
+$_SESSION['fath_tel']=$_POST['fath_tel'];
+$_SESSION['fath_job']=$_POST['fath_job'];
+$_SESSION['moth_name']=$_POST['moth_name'];
+$_SESSION['moth_id']=$_POST['moth_id'];
+$_SESSION['moth_tel']=$_POST['moth_tel'];	
+$_SESSION['reg_N']=$_POST['reg_N'];
+$_SESSION['std_Cbirth']=$_POST['std_Cbirth'];
+$_SESSION['std_std_sexn']=$_POST['std_std_sexn'];
+$_SESSION['moth_job']=$_POST['moth_job'];
+$_SESSION['std_imge']=$_POST['std_imge'];

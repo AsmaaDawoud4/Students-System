@@ -12,17 +12,17 @@ $result=Run($_SESSION['query']);
 
  if(mysqli_num_rows($result) > 0)
  {
-   $span_name=$_SESSION['span_name'];
+   $elements=$_SESSION['elements'];
    
-   $span_name=json_decode(json_encode ($span_name,true));
+   $elements=json_decode(json_encode ($elements,true));
    
-   $span_name=str_replace(',', '&nbsp;', $span_name);
-  $span_name=explode(',',$span_name);
+   $elements=str_replace(',', '&nbsp;', $elements);
+  $elements=explode(',',$elements);
            $resultspan = '';
                
            
            $resultspan .= '<tr>';
-           foreach ($span_name as $value) {
+           foreach ($elements as $value) {
                $resultspan .= '<td>' . $value . '</td>';
            }
            $resultspan .= '</tr>';

@@ -2,26 +2,24 @@
 session_start();
 include '../functions/connect.php';
 
-
-$elements = $_POST['elements'];
-$elements = array($elements);
-$span_name = $_POST['span_name'];
-$_SESSION['span_name'] = $span_name;
-
-for ($data_db = 0; $data_db < count($elements); $data_db++) {
+ 
+$span_name = $_GET['span_name'];//db name
+$span_name = array($span_name);
+$elements =$_GET['elements'];//arabic name ;
+$_SESSION['elements']=$elements;
+/** get table body data */
+for ($data_db = 0; $data_db < count($span_name); $data_db++) {
     echo json_encode([
         'success'  => true,
-        'data' => $elements[$data_db],
+        'data' => $span_name[$data_db],
 
     ]);
 
-    $query = "SELECT $elements[$data_db] FROM std";
-    $_SESSION['query'] = $query;
+    $query = "SELECT $span_name[$data_db] FROM std";
+    $_SESSION['query_data'] = $query;
     $data = GetDataall($query);
 
     $resultHTML = '';
-    $i = 0;
-    $j = 0;
 
     $keys = array_keys($data);
     foreach ($data as $array) {
@@ -35,21 +33,18 @@ for ($data_db = 0; $data_db < count($elements); $data_db++) {
     $_SESSION['resultHTML'] = $resultHTML;
      echo json_encode([
         'success' => true,
-        'std_data' => $resultHTML
+        'std_data' => $data
     ]);
-
-    $span_name = explode(',', $span_name);
+/**get the thead name */
+    $elements = explode(',', $elements);
     $resultspan = '';
 
     $resultspan .= '<tr>';
-    foreach ($span_name as $value) {
+    foreach ($elements as $value) {
         $resultspan .= '<td>' . $value . '</td>';
     }
     $resultspan .= '</tr>';
 
-    $_SESSION['resultspan'] = $resultspan;
-    echo json_encode([
-        'success' => true,
-        'std_data' => $resultspan
-    ]);
-}
+    $_SESSION['resultspan'] = $resultspan ;
+  
+ }

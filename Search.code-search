@@ -1,0 +1,99 @@
+# Query: student-record.html
+# ContextLines: 1
+
+19 results - 19 files
+
+about-datastudent.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+add-student.html:
+  41                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  42:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  43                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+add-studenthold.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+add-teacher.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+add-teacherhold.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+age-calculator.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+budget.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+class-data.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+contact-daily.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+editing-data.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i> اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a>
+  42                              </li>
+
+pay-fees.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+print-certificates.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+print-payroll.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+schedule.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+student's-birthday.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+student's-id.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+teacher-delays.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i>  اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a></li>
+  42                              <li><a href="age-calculator.html"><i class="fas fa-calculator"></i> حاسبة عمر الطلاب</a></li>
+
+therecord.html:
+  40                              <li><a href="add-student.html"><i class="fas fa-user-graduate"></i> اضافه طالب </a></li>
+  41:                             <li><a href="student-record.html"><i class="far fa-sticky-note"></i> القيد اليومى للطلاب</a>
+  42                              </li>
+
+assets\php\students\edit2_student.php:
+  84  $query_updatestd =Run($update_std);
+  85: 	header("location:../../../student-record.html");
+  86  

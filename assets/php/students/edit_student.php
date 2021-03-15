@@ -7,7 +7,9 @@
 $id=$_SESSION['id'];
 
 $std_name = $_POST['std_name'];
-$std_id   = $_POST['std_id'];	
+$std_id   = $_POST['std_id'];
+
+$query_updatestd =Run($update_std);
 $std_rlgn =$_POST['std_rlgn'];
 $std_DOB = $_POST['std_DOB'];
 $std_Adress = $_POST['std_Adress'];
@@ -67,13 +69,13 @@ if($_FILES['std_imge']['error'] == 0 and !empty($tempName)){
 
 }
 
-$update_std = "UPDATE std SET
-std_name='$std_name',std_id='$std_id',std_rlgn='$std_rlgn',std_DOB='$std_DOB',std_Adress='$std_Adress',std_sex='$std_sex',
-std_lvl='$std_lvl',std_stge='$std_stge',std_class='$std_class',std_custody='$std_custody',std_imge='$imgName',
-Relationship='$Relationship',fath_name='$fath_name',fath_id='$fath_id',
-fath_tel='$fath_tel',fath_job='$fath_job',moth_name='$moth_name',moth_id='$moth_id',moth_tel='$moth_tel',moth_job='$moth_job'
-,reg_N='$reg_N',std_Cbirth='$std_Cbirth',std_std_sexn='$std_std_sexn',R_Name='$R_Name' WHERE 
-id='$id'
+	$update_std = "UPDATE std SET
+	std_name='$std_name',std_id='$std_id',std_rlgn='$std_rlgn',std_DOB='$std_DOB',std_Adress='$std_Adress',std_sex='$std_sex',
+	std_lvl='$std_lvl',std_stge='$std_stge',std_class='$std_class',std_custody='$std_custody',std_imge='$imgName',
+	Relationship='$Relationship',fath_name='$fath_name',fath_id='$fath_id',
+	fath_tel='$fath_tel',fath_job='$fath_job',moth_name='$moth_name',moth_id='$moth_id',moth_tel='$moth_tel',moth_job='$moth_job'
+	,reg_N='$reg_N',std_Cbirth='$std_Cbirth',std_std_sexn='$std_std_sexn',R_Name='$R_Name' WHERE 
+	id='$id'
 
   ";
 

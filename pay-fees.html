@@ -129,15 +129,18 @@
         <div class="container">
             <div class="search-block">
                 <div class="input-group">
-                    <input  type="text" placeholder="أبحث عن ...">
-                    <button class="btn inputgroup-icon">
+                    <input  type="text" placeholder="أبحث عن ..." id="search">
+                    <button class="btn inputgroup-icon search">
                         <i class="fas fa-search"></i> بحث
                     </button>
                 </div>
+                <div hidden style="margin-top:20px;margin-right: 40px;float:auto;" class="result"></div>
+
             </div>
 
             <form class="addstudent-form disabled-options">
                 <div class="form-block read-only">
+                    <div class="form-group"><input type="hidden" name="std_imge"></div>
                     <!--block-title-->
                     <div class="block-title d-flex">
                         <img class="icon-title" src="assets/imgs/graduated.png">
@@ -145,47 +148,49 @@
                     <div class="row ">
                         <!--inputs-group -->
                         <div class="inputs-group row-cols-3">
-                            <span class="balloon-input read-only">
-                                <label >الأسم :</label>
-                                <P>محمد أحمد</P>
+                            <span  class="balloon-input read-only">
+                                <label  >الأسم :</label>
+                                <p name="std_name"></p>
+                                <p hidden name="id"></p>
+                                
                             </span>
                             <span class="balloon-input read-only">
                                 <label >المرحلة :</label>
-                                <P>الأبتدائية</P>
+                                <P name="std_lvl"></P>
                             </span>
                             <span class="balloon-input read-only">
                                 <label >الفصل :</label>
-                                <P>الفصل</P>
+                                <P name="std_class"></P>
                             </span>
                             <span></span>
                             <span class="balloon-input">
                                 <label> اسم الاب :   </label>
-                                <p>محمد أحمد محمد</p>
+                                <p name="fath_name"></p>
                             </span>
                             <span class="balloon-input">
                                 <label> رقم بطاقة الأب :   </label>
-                                <p>012345678978952</p>
+                                <p name="fath_id"></p>
                             </span>
                             <span class="balloon-input">
                                 <label> اسم الام :   </label>
-                                <p>اسم الام</p>
+                                <p name="moth_name"> </p>
                             </span>
                             <span class="balloon-input">
                                 <label> رقم بطاقة الأم:   </label>
-                                <p>012345678978952</p>
+                                <p name="moth_id"></p>
                             </span>
 
                          
                         </div>
                           <!--upload-img-->
-                          <div class="upload-img">
-                            <div class="upload-content"> </div>
-                             <div class="readOnly-img" style="background-image: url('assets/imgs/student-album1.jpg');"></div>
+                          <div class="upload-img"  >
+                            <div class="upload-content" > </div>
+                             <div class="readOnly-img" id="stdimg"  name="std_imge" ></div>
                         </div>
 
                     </div>
                     <div class="table-responsive">
-                    <table  class="display dataTables-material cell-border row-border " style="width:100%">
+                    <table id="table" class="display dataTables-material cell-border row-border  respect" style="width:100%">
                         <thead>
                             <tr>
                                 <th > التاريخ</th>
@@ -198,7 +203,7 @@
                             </tr>
                             
                         </thead>
-                        <tbody>
+                        <tbody >
                             <tr>
                                 <td>
                                     <div class="input-group">
@@ -206,7 +211,7 @@
                                             <i class="fa fa-calendar" aria-hidden="true"></i>
                                         </div>
                                         <input  type="text" data-toggle="datepicker"
-                                            placeholder="التاريخ" autocomplete="off">
+                                            placeholder="التاريخ" autocomplete="off"  name="rec-date">
                                     </div>
                                 </td>
                                 <td>
@@ -221,12 +226,12 @@
                                 </td>
                                 <td>
                                     <div class="input-group">
-                                        <input type="text" placeholder="المبلغ المدفوع" />
+                                        <input type="text" placeholder="المبلغ المدفوع" name="rec-total" />
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-group">
-                                        <input type="text" placeholder="المتبقى" />
+                                        <input type="text" placeholder="المتبقى" name="rec-remain" />
                                     </div>
                                 </td>
                                 <td>
@@ -237,8 +242,8 @@
                                 <td>
                                     <div class="group-bnt  text-center">
                                         <a href="#" class="btn btn-sm">طباعة </a>
-                                        <a href="#" class="btn btn-sm">حفظ </a>
-                                        <a href="#" class="btn btn-sm">تعديل </a>
+                                        <a href="#" class="btn btn-sm save_respect">حفظ </a>
+                                        <a href="#" class="btn btn-sm edit_respect">تعديل </a>
                                     </div>
                                 </td>
                             </tr>
@@ -285,7 +290,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
+                        </tbody>
+                        <tbody id="std_respect_tr">
+                            <tr >
                                 <td>
                                     <div class="input-group">
                                         <div class="inputgroup-icon">
@@ -328,50 +335,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="input-group">
-                                        <div class="inputgroup-icon">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </div>
-                                        <input  type="text" data-toggle="datepicker"
-                                            placeholder="التاريخ" autocomplete="off">
-                                    </div>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option style="display: none;"> نوع القسط  </option>
-                                        <option>مصاريف </option>
-                                        <option>زي </option>
-                                        <option>كتب </option>
-                                        <option>مجموعات </option>
-                                        <option>باص </option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        <input type="text" placeholder="المبلغ المدفوع" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        <input type="text" placeholder="المتبقى" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        <textarea placeholder="ملاحظات"></textarea>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="group-bnt  text-center">
-                                        <a href="#" class="btn btn-sm">طباعة </a>
-                                        <a href="#" class="btn btn-sm">حفظ </a>
-                                        <a href="#" class="btn btn-sm">تعديل </a>
-                                    </div>
-                                </td>
-                            </tr>
-
+                            
 
                     
                     
@@ -426,6 +390,7 @@
      <script src="assets/js/jquery.dataTables.min.js"></script>
     <!-- custom js (plugin) -->
     <script src="assets/js/plugin.js"></script>
+    <script src="assets/php/students/js/pay-fees.js"></script>
 </body>
 
 </html>

@@ -25,6 +25,7 @@ $reg_N=$_POST['reg_N'];
 $std_Cbirth=$_POST['std_Cbirth'];
 $std_std_sexn=$_POST['std_std_sexn'];
 $moth_job=$_POST['moth_job'];
+$timestamp = date('Y-m-d H:i:s');
 $imgName = $_FILES['std_imge']['name'];
 $tempName = $_FILES['std_imge']['tmp_name'];
 
@@ -56,12 +57,12 @@ if($_FILES['std_imge']['error'] == 0 ){
 $insert_std = "INSERT INTO std
 (std_name,std_id,std_rlgn,std_DOB,std_Adress,std_sex,std_lvl,std_stge,std_class,
 std_custody,std_imge,Relationship,fath_name,fath_id,
-fath_tel,fath_job,moth_name,moth_id,moth_tel,moth_job,reg_N,std_Cbirth,std_std_sexn,R_Name)
+fath_tel,fath_job,moth_name,moth_id,moth_tel,moth_job,reg_N,std_Cbirth,std_std_sexn,R_Name,timestamp)
 VALUES
 ('$std_name','$std_id','$std_rlgn','$std_DOB','$std_Adress','$std_sex','$std_lvl','$std_stge',
 '$std_class','$std_custody','$imgName','$Relationship','$fath_name','$fath_id',
 '$fath_tel','$fath_job','$moth_name','$moth_id','$moth_tel','$moth_job','$reg_N',
-'$std_Cbirth','$std_std_sexn','$R_Name' )";
+'$std_Cbirth','$std_std_sexn','$R_Name','$timestamp' )";
 
 $query_addstd =Run($insert_std);
 if ($query_addstd) {

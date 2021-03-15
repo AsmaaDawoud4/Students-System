@@ -12,7 +12,7 @@ $(document).ready(function () {
         success: function (data) {
             /**request sucess and given data */
             $('#studentName').val(data.value);
-       
+            
             var img = new Image();
             img.src = `assets/imgs/${data.image}`;
             var myCanvas = document.getElementById('stdimg');

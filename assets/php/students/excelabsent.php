@@ -1,9 +1,6 @@
 
 
 <?php  
-//export.php  
-// $connect = new mysqli('localhost', 'root', '', 'myschool');
-// $connect -> set_charset('utf-8');
 session_start();
 include_once '../functions/connect.php';
 

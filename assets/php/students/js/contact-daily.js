@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     ////*** ajax request onload page edit_student */   
-
+    var dTable_showAbsent=$('.show_absent').DataTable();
     /**search input */
     $("#studentdate").click(function () {
 
@@ -14,9 +14,12 @@ $(document).ready(function () {
                 dataType: 'json',
                 data: { std_absent: std_absent },
                 success: function (data) {
-                    if (data.success) {
-                        $('tbody').empty().html(data.std_absent_data);
-                    }
+                    console.log('so')
+                   
+                        $.each(data, (key, value) => {
+                            dTable_showAbsent.row.add(value).draw();
+                        });
+                
                 }
 
             });

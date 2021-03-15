@@ -128,7 +128,7 @@
     <section class="main-content  pb-70">
         <div class="container">
 
-            <form class="addstudent-form " action="assets/php/students/add-teacher.php" method="POST"  enctype="multipart/form-data">
+            <form class="addstudent-form " action="assets/php/teachers/add-teacher.php" method="POST"  enctype="multipart/form-data">
                 <div class="form-block">
                     <!--block-title-->
                     <div class="block-title d-flex">
@@ -152,7 +152,7 @@
                                 </div>
                             </span>
                             <span class="balloon-input">
-                                <input class="balloon" id="studentNa" name="" type="text" />
+                                <input class="balloon" id="studentNa" name="teacher_sexn" type="text" />
                                 <label for="studentNa">الجنسية </label>
                             </span>
                             <span>
@@ -253,7 +253,7 @@
                             <div class="upload-content">
                                 <div class="overlay d-flex">
                                     <div class="group-bnt">
-                                        <a href="#" class="btn">طباعة تقرير pdf</a>
+                                        <a href="#" class="btn addteacher">طباعة تقرير pdf</a>
                                         <a href="#" class="btn">طباعة بيانات المدرس</a>
                                         <a href="#" class="btn">لاحقا</a>
                                     </div>
@@ -317,6 +317,7 @@
      <script src="assets/js/jquery.dataTables.min.js"></script>
     <!-- custom js (plugin) -->
     <script src="assets/js/plugin.js"></script>
+    <script src="assets/php/teachers/js/add_teacher.js"></script>
 </body>
 
 </html>
